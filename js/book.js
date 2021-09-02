@@ -38,16 +38,17 @@ const displaySearchResult = data => {
             <p>Total Results: ${data.numFound} | Showing Results from 1 to ${books.length}</p>
         `;
         books.forEach(book => {
+            const bookCover = book.cover_i;
             const bookTitle = book.title;
             const bookAuthor = book.author_name;
             const bookPublisher = book.publisher;
             const bookFirstPublished = book.first_publish_year;
-                        
+
             const div = document.createElement('div');
             div.classList.add('col');
             div.innerHTML = `
                 <div class="card h-100">
-                    <img src="https://covers.openlibrary.org/b/id/${book.cover_i}-M.jpg" class="card-img-top" alt="...">
+                    <img src="https://covers.openlibrary.org/b/id/${bookCover}-M.jpg" class="card-img-top" alt="...">
                     <div class="card-body text-center">
                         <h5 class="card-title fs-3">${bookTitle}</h5>
                         <p class="card-text"><span class="fw-bold">Author: </span>${bookAuthor} </br>
