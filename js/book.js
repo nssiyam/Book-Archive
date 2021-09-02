@@ -9,7 +9,7 @@ const searchBook = () => {
 
     // clear search field 
     searchField.value = '';
-    if (searchText == '') {
+    if (searchText === '') {
         noResultMsg.innerText = 'Please fill out the search box!!';
     }
     noResultMsg.style.display = 'none';
@@ -28,7 +28,7 @@ const displaySearchResult = data => {
     const searchLength = data.docs.splice(25);
     const books = data.docs;
 
-    if (books.length == 0) {
+    if (books.length === 0) {
         noResultMsg.style.display = 'block';
     }
 
